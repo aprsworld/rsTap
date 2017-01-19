@@ -185,7 +185,7 @@ void main(void) {
 	read_param_file();
 	read_device_file();
 
-	fprintf(world,"# rsTap.c %s (%c%lu)\r\n",__DATE__,config.serial_prefix,config.serial_number);
+	fprintf(world,"# rsTap.c (planetPrecision) %s (%c%lu)\r\n",__DATE__,config.serial_prefix,config.serial_number);
 
 	modbus_init();
 
