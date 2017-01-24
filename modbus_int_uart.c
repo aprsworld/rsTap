@@ -187,7 +187,7 @@
 #define MODBUS_SERIAL_TX_PIN       NET_TX   // Data transmit pin
 #define MODBUS_SERIAL_ENABLE_PIN   RS485_DE   // Controls DE pin.  RX low, TX high.
 #define MODBUS_SERIAL_RX_ENABLE    RS485_NOT_RE   // Controls RE pin.  Should keep low.
-#define MODBUS_SERIAL_TIMEOUT      100000     //in us
+#define MODBUS_SERIAL_TIMEOUT      200000     //in us
 
 
 #use rs232(baud=MODBUS_SERIAL_BAUD, UART1, parity=N, stream=MODBUS_SERIAL, errors)
