@@ -31,7 +31,51 @@ void write_default_device_file(void) {
 
 //	fprintf(world,"# writing default devices for Fremont\r\n");
 
+
 #if 1
+/* Warner McClure - New Meter 20170517
+RS485Tap
+Serial: A4001
+
+XRW2G
+Serial: A3747
+ID: 24
+
+AccuEnergy AcuDC 243 
+Serial: DF14050358
+ID: 100 
+*/
+
+	/* XRW2G modbus all data (no status) */
+	device[0].type=DEV_TYPE_MODBUS_4;
+	device[0].typeWorld=DEVICE_TYPE_WORLD_XRW2G_BASIC;
+	device[0].transmitEvery=1;
+	device[0].networkAddress=24;
+	device[0].serialNumber=4259840 + 3747; /* ord('A')<<16 (=4259840) + serial */
+	device[0].startRegister=0;
+	device[0].nRegisters=46;
+
+	/* AcuDC 243-60V-A1-C Basic Registers */
+	device[1].type=DEV_TYPE_MODBUS_3;
+	device[1].typeWorld=DEVICE_TYPE_WORLD_RSDATA_FLOAT_LITTLE;
+	device[1].transmitEvery=1;
+	device[1].networkAddress=100;
+	device[1].serialNumber=0; 
+	device[1].startRegister=512;
+	device[1].nRegisters=10;
+
+	/* AcuDC 243-60V-A1-C Energy Registers */
+	device[2].type=DEV_TYPE_MODBUS_3;
+	device[2].typeWorld=DEVICE_TYPE_WORLD_RSDATA;
+	device[2].transmitEvery=1;
+	device[2].networkAddress=100;
+	device[2].serialNumber=1;
+	device[2].startRegister=768;
+	device[2].nRegisters=8;
+
+#endif
+
+#if 0
 /*
 JRC New System
 RS485Tap

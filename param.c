@@ -53,7 +53,7 @@ void write_default_param_file() {
 //	config.serial_prefix='Z';
 //	config.serial_number=9875;
 	config.serial_prefix='A';
-	config.serial_number=4750;
+	config.serial_number=4001;
 
 //	config.live_interval=60;
 	config.live_interval=10;

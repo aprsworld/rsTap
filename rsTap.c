@@ -140,7 +140,11 @@ void deviceQuery(void) {
 
 		if ( DEV_TYPE_MODBUS_3 == device[n].type || DEV_TYPE_MODBUS_4 == device[n].type ) {
 			/* Modbus read input or holding registers */
-			qbuff.rException=modbus_read_input_registers(device[n].networkAddress, device[n].startRegister, device[n].nRegisters);
+			if ( DEV_TYPE_MODBUS_4 == device[n].type ) {
+				qbuff.rException=modbus_read_input_registers(device[n].networkAddress, device[n].startRegister, device[n].nRegisters);
+			} else {
+				qbuff.rException=modbus_read_holding_registers(device[n].networkAddress, device[n].startRegister, device[n].nRegisters);
+			}
 
 			/* no error, copy data to buffer to send */
 			if ( 0 == qbuff.rException ) {

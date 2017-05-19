@@ -100,3 +100,12 @@
 
 /* Veris E50 Series Power Meter */
 #define DEVICE_TYPE_WORLD_VERISE50_BASIC       1500 /* 256, 54 registers */
+
+
+/* Note: List not complete.  Reference master list in WorldDataCollector. */
+
+
+/* generic rsdata */
+#define DEVICE_TYPE_WORLD_RSDATA               32000 /* Integer */
+#define DEVICE_TYPE_WORLD_RSDATA_FLOAT         32001 /* IEEE-754 single precision floating point (32-bit) data */
+#define DEVICE_TYPE_WORLD_RSDATA_FLOAT_LITTLE  32002 
